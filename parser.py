@@ -89,6 +89,8 @@ class Parser(object):
                 self.expect("NEWLINE")
             else:
                 while self.expect_not("NEWLINE"):
+                    if self.tokens.last()[0] == "WHITESPACE":  # skip spaces
+                        continue
                     step.arguments.append(self.tokens.last()[1])
                 self.expect("NEWLINE")
             return step

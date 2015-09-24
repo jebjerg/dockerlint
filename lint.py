@@ -1,5 +1,6 @@
 from parser import Parser
 from sys import stdin, exit
+from os import getenv
 # TODO: lint class and logic
 
 # for now: simple, but easy to expand.
@@ -12,7 +13,7 @@ if __name__ == "__main__":
     p = Parser()
     try:
         ast = p.parse(stdin.read())
-    except Excetion as e:  # syntax errors
+    except Exception as e:  # syntax errors
         print e
         exit(2)
 
@@ -22,7 +23,7 @@ if __name__ == "__main__":
         warns += 1
         print "WARN!", " ".join(a)
 
-    debug = None
+    debug = getenv("DEBUG")
     if debug:
         print ast
 

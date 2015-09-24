@@ -75,6 +75,9 @@ class Lexer(object):
                 while self.accept(symbols.NEWLINE):
                     pass
                 yield self.emit("NEWLINE")
+            else:
+                while self.accept_until(symbols.WHITESPACE+[symbols.NEWLINE]):
+                    pass
 
             if self.buf in symbols.KEYWORDS:
                 yield self.emit("KEYWORD")
