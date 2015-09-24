@@ -1,0 +1,7 @@
+FROM ubuntu
+# USER wut
+   
+RUN lol
+ENTRYPOINT ["ls", "la",]
+VOLUME ["/data"]
+WORKDIR "/"

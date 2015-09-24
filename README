@@ -1,0 +1,4 @@
+lex+recursive[1] descent parser for Dockerfile's, with novelty linter[2]
+
+[1]: ok, that's a stretch for such a simple grammar, but it follows said design.
+[2]: yeah... 1 hour of liesure doesn't buy much :)
